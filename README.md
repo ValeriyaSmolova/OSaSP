@@ -51,24 +51,24 @@
 > **Note:** Scripts with `0` in their name are called with the flag `-minimize0`;  
 > Scripts with `123` in their name are called with the flag `-minimize123`.
 
-- **Autorun.sh** - runs the main application - autorun, as well as deleteoldfilesLoop.sh and processUnsentLoop.sh.
-- **c0.sh/c123.sh** - calls metroByWheelCalibration.sh 5 times with the given parameters passed via the command line.
-- **c0first.sh** - runs metroByWheelCalibration.sh with the set of parameters passed to the script, plus the additional options `-preEstimateY`, `-minimize0`, and `-save`.
-- **c0step.sh** - runs metroByWheelCalibration.sh with the set of parameters passed to the script, plus the additional options `-minimize0`, and `-save`.
-- **c1.sh** - does the same as c0step.sh, tells the program to perform the minimization with a certain number of iterations, equal to the value of the variable `ITERS`.
-- **c123aWheel.sh** - does the same as c0.sh, with the addition of a new flag `-aWheel`.
-- **c123aWheelStep.sh** - does the same as c0step.sh, with the addition of a new flag `-aWheel`.
-- **c123first.sh** - does the same as c0first.sh, with the addition of flag `-orthonormalizeInput`.
-- **c123step.sh** - does the same as c0step.sh.
-- **c1test.sh** - runs metroByWheelCalibration.sh for left side.
-- **cAll.sh** - runs the script c123first.sh, as well as scripts c123.sh, c0first.sh and c0.sh with the flag `-supressOutput`.
-- **cAllaWheel.sh** - runs the script c123first.sh, as well as scripts c123.sh, c123aWheel.sh,c0first.sh and c0.sh with the flag `-supressOutput`.
-- **cNot.sh** - runs metroByWheelCalibration.sh without any flags.
+- **Autorun.sh** - runs the main application - autorun, as well as *deleteoldfilesLoop.sh* and *processUnsentLoop.sh*.
+- **c0.sh/c123.sh** - calls *metroByWheelCalibration.sh* 5 times with the given parameters passed via the command line.
+- **c0first.sh** - runs *metroByWheelCalibration.sh* with the set of parameters passed to the script, plus the additional options `-preEstimateY`, `-minimize0`, and `-save`.
+- **c0step.sh** - runs *metroByWheelCalibration.sh* with the set of parameters passed to the script, plus the additional options `-minimize0`, and `-save`.
+- **c1.sh** - does the same as *c0step.sh*, tells the program to perform the minimization with a certain number of iterations, equal to the value of the variable `ITERS`.
+- **c123aWheel.sh** - does the same as *c0.sh*, with the addition of a new flag `-aWheel`.
+- **c123aWheelStep.sh** - does the same as *c0step.sh*, with the addition of a new flag `-aWheel`.
+- **c123first.sh** - does the same as *c0first.sh*, with the addition of flag `-orthonormalizeInput`.
+- **c123step.sh** - does the same as *c0step.sh*.
+- **c1test.sh** - runs *metroByWheelCalibration.sh* for left side.
+- **cAll.sh** - runs the script *c123first.sh*, as well as scripts *c123.sh*, *c0first.sh* and *c0.sh* with the flag `-supressOutput`.
+- **cAllaWheel.sh** - runs the script *c123first.sh*, as well as scripts *c123.sh*, *c123aWheel.sh*, *c0first.sh* and *c0.sh* with the flag `-supressOutput`.
+- **cNot.sh** - runs *metroByWheelCalibration.sh* without any flags.
 - **cleansedvideodetectionirkutsk.py/cleansedvideodetectionnovosib.py** - used for video processing for automatic recognition of car numbers, saving results to a file and saving the image of the current frame.
 - **copyCbr.sh** - updates the cbr.ini file, making a backup copy of the current file if it exists, and replacing it with a new file from another directory.
 - **copyCbrDumps.sh** - creates the specified directory and copies files from the current directory into it.
 - **copyVideo.sh** - archives the files and directory, then deletes the original files and directory from the specified destination directory.
-- **deleteoldfilesLoop.sh** - periodically (every 48 hours) runs the deleteoldfiles.pl script, which cleans the ~/Dumps directory from old files.
+- **deleteoldfilesLoop.sh** - periodically (every 48 hours) runs the *deleteoldfiles.pl* script, which cleans the ~/Dumps directory from old files.
 - **deleteoldfiles.pl** - perl script deletes old files and empty directories in a specified folder, creating a log file with the results of the work.
 - **metroByWheelCalibration-prepare.sh** - copies the required files to the specified directory and runs the program - genfilters.
 - **metroByWheelCalibration.sh** - depending on the mode 2+3 + 3+2 scanners (B2B) or 3+2 + 2+3 scanners (BIR) launches the corresponding program metroByWheelCalibration or metroByWheelCalibration32.
