@@ -590,10 +590,10 @@ Depends on rfmath library. The program requires the following files:
 
 ### ReprofilingMath
 Includes rfmath library. Also should contain:
-`Etalon file`: The etalonFilename (e.g., BRU_Loco_29.ref) is a reference file that the program uses for comparison;
-`Profile CSV files`: You need the profile files for each wheel in the profiles folder (e.g., l_0.csv, r_0.csv, etc.) in the directory specified by the dumpFolder parameter;
-`Configuration file`: reprofile.conf, which is used to store configuration parameters such as the etalonFilename, maxAllowableY, minAllowableY, etc;
-`Results directory`: The program will generate output files, such as reprofileResult.csv and .txt files for each processed wheel profile.
+- `Etalon file`: The etalonFilename (e.g., BRU_Loco_29.ref) is a reference file that the program uses for comparison;
+- `Profile CSV files`: You need the profile files for each wheel in the profiles folder (e.g., l_0.csv, r_0.csv, etc.) in the directory specified by the dumpFolder parameter;
+- `Configuration file`: reprofile.conf, which is used to store configuration parameters such as the etalonFilename, maxAllowableY, minAllowableY, etc;
+- `Results directory`: The program will generate output files, such as reprofileResult.csv and .txt files for each processed wheel profile.
 
 Once the program is compiled, you can run it from the terminal/command prompt:
 ```sh
