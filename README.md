@@ -146,7 +146,7 @@
 
 ## Execution instructions
 
-**RF603Logger**
+### RF603Logger
 Need to enter a command with four parameters that it accepts:
 ```sh
 ./rf603logger <portName> <baudRate> <outFile> <time>
@@ -156,13 +156,13 @@ Need to enter a command with four parameters that it accepts:
 - `<outFile>` - file name for writing data;
 - `<time>` - the time in seconds that the program will run.
 
-**VIDEO_RECORDER**
+### VIDEO_RECORDER
 Need to install OpenCV:
 ```bash
 sudo apt-get install libopencv-dev
 ```
 
-**Auracl**
+### Auracl
 To run need to have `auracl.conf` file, to read the settings and JSON file, which should contain the wheelset data.  
 `auracl.conf` may contain the following data:
 ```ini
@@ -229,7 +229,7 @@ And JSON file must contain such information:
 ]
 ```
 
-**Autorun**
+### Autorun
 Depends on the ipc library. An `autorun.conf` configuration file is required to store the settings and commands that will be executed.
 ```ini
 [General]
@@ -245,7 +245,7 @@ order=0
 ```
 where `title` is the title displayed on the web page, `commands` is the list of allowed module control commands, `order` is the order of launch (optional); available commands: start, stop, restart, log.
 
-**Bin2svg**
+### Bin2svg
 Depends on the rfmath library. Uses the `.conf` configuration file.  
 Example, `bin2svg.conf`:
 ```ini
@@ -263,14 +263,14 @@ Expects three command line parameters:
 - `outfile`: output SVG file;
 - `nframe`: frame number.
 
-**Calibration**
+### Calibration
 Depends on the rfmath library. The program expects several configuration files and source data:
 - `params.ini`: configuration file for parameters such as `belgimL`, `belgimR`, `dumpsPath`, `side` and others;
 - `results.ini`: file for storing results;
 - `RF_*.bin`: files with data for calibration. The program reads binary files with points, which are supposed to be in the `dumpsPath` directory;
 - `belgimL` and `belgimR`: the calibration data files for the left and right sides.
 
-**Controller**
+### Controller
 Depends on ipc and rf700 libraries. Also loads settings from the `controller.conf` file:
 ```ini
 [General]
@@ -297,7 +297,7 @@ RF700 controller settings:
 
 The program communicates with the RF700 device connected via serial port. Check that the correct parameters are set in `controller.conf`.
 
-**Converter**
+### Converter
 Depends on ipc and rf096 libraries. Should include files from directory `./webserver/3rdparty`. And there must also be a configuration file `converter.conf`.
 ```ini
 [General]
@@ -329,7 +329,7 @@ invert2=true
 
 `[1]` – section name, from 1 to `count`, specified in the `General` section. The section name corresponds to the module number in the system.
 
-**Converter_moxa**
+### Converter_moxa
 Depends on nport and ipc libraries. There must be a file `converter_moxa.conf`:
 ```ini
 [General]
@@ -344,7 +344,7 @@ baud=115200
 motorsCount=1
 htcCount=1
 ```
-**Converter_stub**
+### Converter_stub
 Depends on ipc library. The program uses `converter_stub.conf` file:
 ```ini
 [General]
@@ -362,10 +362,10 @@ readStateInterval=1000
 - `dir` – direction of movement;
 - `readStateInterval` – interval (in ms) to read motor states.
 
-**Cw6300**
+### Cw6300
 Depends on ipc and modbus. The `upsmon.conf` configuration file specifies parameters such as timeout settings and logging levels. Make sure it exists and contains the correct values for the parameters.
 
-**Dumper**
+### Dumper
 Includes ipc library and files:
 - `dumper.conf`: ini file with configurations;
 - `responsekey.txt`: file containing encrypted response for the license.
@@ -408,12 +408,12 @@ frameDivisor=500
 ```
 Parameters used in frame calibration.
 
-**Dumper60x**
+### Dumper60x
 Similar to the program *dumper*, this project also contains library and configuration file. The program supports several command options, for example:
 - `-d` or `--dump` to perform a dump;
 - `-t` or `--time` to set the dump execution time in seconds.
 
-**Dumpprocessor**
+### Dumpprocessor
 Uses ipc and rfmath libraries. Configuration file – `dumpprocessor.conf`:
 ```ini
 [General]
@@ -465,33 +465,34 @@ smtp_passw=Password
 - `recepients` -- list of e-mails recipients to which reports on the full composition measurement will be sent;
 - `smtp_server`, `smtp_port`, `smtp_login`, `smtp_password` – settings of the SMTP server of the mail service, with the help of which the mailing is carried out.
  
-**Extractikp**
+
+### Extractikp
 This program is launched with three command line parameters:
 - `infile input.ikp` — path to the input file with IKP format data (the file that the program will read);
 - `outfile output.txt` — path to the output text file where the results will be written;
 - `number 1` — profile number to be processed from the input file.
 
-**Genfilters**
+### Genfilters
 This program is launched with two command line parameters:
 - `infile path/to/cbr.ini` — path to the input INI file containing the parameters that the program will read;
 - `outdir path/to/output/directory` — path to the directory where two text files will be written: filteringL.txt and filteringR.txt.
 
-**Genrep1**
+### Genrep1
 Ensure the `genrep1.ini` configuration file is in the correct directory or adjust the path to it within the program.
 
 The program expects specific values for `wheelParams` and `wheelsetParams` inside `genrep1.ini`. Also, it expects JSON files for the wheel schemes. These files should be in the working directory that you provide when running the program.
 
 The files should be structured correctly to match the fields expected by the `CWheelScheme` class. Ensure that the JSON files contain data like `trainNumber`, `dateTime`, and relevant wheel and wheelset parameters.
 
-**Genrequestkey**
+### Genrequestkey
 Includes RF62X-SDK. `Requestkey.txt` must be read/write.
 
-**Genresponsekey**
+### Genresponsekey
 ```sh
 ./genrequestkey -i request.txt -o responsekey.txt
 ```
 
-**Indsensmon**
+### Indsensmon
 Includes ipc library. Create `indsensmon.conf` in the folder with the executable file:
 ```ini
 [General]
@@ -504,7 +505,7 @@ port=4001
 - `port` and `devicePort` — ports for receiving and sending;
 - `interface` — local IP to which the UDP socket will be bound.
 
-**Loader**
+### Loader
 Must include rf700 library. The launch is performed by the following command:
 ```sh
 ./loader -i firmware.bin -p /dev/ttyUSB0 -b 115200 -a 0
@@ -514,7 +515,7 @@ Must include rf700 library. The launch is performed by the following command:
 - `b 115200` — baud rate;
 - `a 0` — device address (default 0).
 
-**MetroByWheelCalibration**
+### MetroByWheelCalibration
 Depends on rfmath library. This program requires several files to work correctly:
 - Scanner calibration file, path:
 `/your_data_folder/calibration/Cbr_new.ini`
@@ -552,7 +553,7 @@ Calibration algorithm:
 > 4. First run: `isMinimize123 = false`, `isMinimize0 = true`, `isPreEstimateY = true`;
 > 5. Next runs: `isPreEstimateY = false`.
 
-**MetroByWheelCalibration32**
+### MetroByWheelCalibration32
 Also depends on rfmath. Includes files such as:
 `configuration.ini` – contains system information:
 - `mirroring mode`;
@@ -570,7 +571,7 @@ Also depends on rfmath. Includes files such as:
 
 Check that the `calibrationFileFolder` folder exists and contains `cutting.txt` and `Cbr_new.ini`.
 
-**Nanotec_n5_ctl**
+### Nanotec_n5_ctl
 The program expects command line arguments:
 ```sh
 ./nanotec_n5_ctl -a 192.168.1.100 -c move 5000
@@ -581,13 +582,13 @@ The program expects command line arguments:
 
 Before starting, please make sure that the Nanotec device is accessible.
 
-**RecalcRF40dump**
+### RecalcRF40dump
 Depends on rfmath library. The program requires the following files:
 `RF_40.bin` – binary dump file (in the specified folder);
 `tz_old.tbl` – original calibration table (in the root folder with the program);
 `tz.tbl` – new calibration table (in the root folder with the program).
 
-**ReprofilingMath**
+### ReprofilingMath
 Includes rfmath library. Also should contain:
 `Etalon file`: The etalonFilename (e.g., BRU_Loco_29.ref) is a reference file that the program uses for comparison;
 `Profile CSV files`: You need the profile files for each wheel in the profiles folder (e.g., l_0.csv, r_0.csv, etc.) in the directory specified by the dumpFolder parameter;
@@ -603,7 +604,7 @@ Once the program is compiled, you can run it from the terminal/command prompt:
 - `<path_to_dump_folder>`: The path to the folder containing the profile data (profiles folder);
 - `[<debug_wheel_side (l|r)> <debug_wheel_index>] (optional)`: For debugging, you can specify the wheel side (l for left, r for right) and the index of the specific wheel.
 
-**Rfidmon**
+### Rfidmon
 Must include rfid and ipc libraries, and `rfidmon.conf` file:
 
 ```ini
@@ -620,7 +621,7 @@ port = "/dev/ttyUSB1"
 baud = 9600 
 ```
 
-**Rfidmon_eth**
+### Rfidmon_eth
 Includes ipc library. Settings file – `rfidmon_eth.conf`:
 
 ```ini
@@ -631,7 +632,7 @@ port=9999
 
 IP address of the interface and the port to which the RFID receiver is configured to broadcast.
 
-**Upsmon**
+### Upsmon
 Depends on ipc and ups libraries. Settings file – `ups.conf`:
 
 ```ini
